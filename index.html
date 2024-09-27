@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For the Love of Mi Amor</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Georgia', serif;
+            color: #333;
+            background: linear-gradient(0deg, #ffcccc, #ff99cc, #f50303);
+            background-size: 300% 300%;
+            animation: backgroundScroll 10s ease infinite;
+        }
+
+        @keyframes backgroundScroll {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Full-page sections */
+        section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 100vh;
+            padding: 5px;
+            color: #fff;
+        }
+
+        h1, h2, h3 {
+            margin: 20px 0;
+            font-family: 'Cursive', sans-serif;
+            letter-spacing: 2px;
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin: 20px;
+        }
+
+        /* Interactive Love Declaration */
+        .interactive button {
+            padding: 15px 30px;
+            background-color: #ff3366;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1.5rem;
+            position: relative;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .interactive button:hover {
+            background-color: #ff6699;
+        }
+
+        /* Running Button */
+        .move-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-200%, -1000%);
+        }
+
+        /* Bouncing Text */
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            25% { transform: translateY(-20px); }
+            50% { transform: translateY(0); }
+            75% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+
+        .bounce {
+            animation: bounce 5s infinite;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            p {
+                font-size: 1.2rem;
+            }
+
+            .interactive button {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Introduction Section -->
+<section class="intro">
+    <h1>Hadi el resala eli ana sh3'al 3laiha ya hbbty!</h1>
+    <p>You are cute, funny, playful, and I love you more than words can describe.</p>
+    <img class="love-image" src="downloadsmallpic.jpeg" alt="Romantic Couple"> 
+</section>
+
+<!-- Interactive Love Declaration Section -->
+<section class="interactive">
+    <h2>Bt3refi gad ana b7ebk?</h2>
+    <p id="loveMessage">dooosi hennnnnna</p>
+    <button id="loveButton" onclick="runAway()">hayni hena</button>
+    <p><span class = "bounce"></span></p>
+</section>
+
+<!-- Funny Love Poems Section -->
+<section class="poems">
+    <h2>ha7awel a3ber 3an 7obi bas mo gader, bas let me try</h2>
+    <p>"Jowa galbi madeena kamlaa wa kol sokanaha inti 7ata feeha Dr, 3ashan galbi ya3werni ya Dr"</p>
+    <p>"kaif agolk meshtaglk bi tareega t2lm galbk zay ma bt2lm qalbi"</p>
+    <p>"el7ob ma kan 3omro hayd5ol galbi, bas bas nazra wa7da elek 5altni awqa3 bi 3'aramek"</p>
+    <p>In English: "Kont daymn bast3'reb lesh eli b7ebo, byda7oo basbb el 7ob, bas awal ma 3reftk fhmt kol eshi"</p>
+</section>
+
+<!-- Memory Lane Section -->
+<section class="memories">
+    <h2>Good times</h2>
+    <p>Bttzakari lama roo7na dahab? wala lama roo7na wadi el weshwash wa 6ool el hiking ba7wel as7abk la fog</p>
+    <p>wala bttzakari lama roo7na ngeeb burdogz, wa ga3dt agolk eno ma 3alaiki hadf3 visa, wa eget lal car wa shofti el nazra tab3t wa ana bedi cash</p>
+    <img class="love-image" src="wadi el weshwash.jpg" alt="Dahab Vacation"> 
+</section>
+
+<!-- Closing Section -->
+<section class="closing">
+    <h2>this was my main gift for you, mo el qamar</h2>
+    <p>Hada qamar lal qamar taba3i</p>
+    <p><strong>"hena el mafrood a3tek el qamar"</strong></p>
+    
+</section>
+
+<script>
+    let clickCount = 0;
+
+    function runAway() {
+        const button = document.getElementById('loveButton');
+        const message = document.getElementById('loveMessage');
+
+        if (clickCount < 2) {
+            button.style.transform = `translate(${Math.random() * 200 - 100}px, ${Math.random() * 200 - 100}px)`;
+            clickCount++;
+        } else {
+            button.style.transform = 'translate(0, 0)';
+            button.textContent = "Gafateni";
+            message.innerHTML = "<span class='bounce'>B7ebk qad el denia kolaha</span>";
+        }
+    }
+</script>
+
+</body>
+</html>
